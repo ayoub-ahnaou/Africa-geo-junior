@@ -12,6 +12,7 @@
     
     <div class="flex flex-col min-h-[100vh]">
         <?php include"../assets/components/navigation.php"; ?>
+        <?php include"../assets/components/footer.php"; ?>
     </div>
 
 </body>
