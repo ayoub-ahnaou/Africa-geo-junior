@@ -24,6 +24,10 @@
                     </div>
                 </div>
             </section>
+            
+            <div class="p-6 flex justify-center items-center bg-gray-100">
+                <a href="#" class="bg-black px-6 py-2 text-white rounded-md">Explore The Africa Country and cites !</a>
+            </div>
         </div>
         <?php include"../assets/components/footer.php"; ?>
     </div>
