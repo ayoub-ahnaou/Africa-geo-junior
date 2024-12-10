@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="../assets/css/output.css">
     <link rel="stylesheet" href="../assets/css/africa.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="font-[Oswald]">
     
     <div class="flex flex-col min-h-[100vh]">
         <?php include"../assets/components/navigation.php"; ?>
@@ -18,8 +21,8 @@
                 <img class="h-[95vh] w-full object-cover" src="../assets/images/africa-wallpaper.jpeg" alt="">
                 <div class="absolute top-0 bottom-0 w-full flex items-end justify-center">
                     <div class="flex justify-center items-center flex-col w-full pb-6 bg-gradient-to-b from-transparent to-black">
-                        <p class="text-5xl text-white font-[Oswald] p-4">Africa's Time</p>
-                        <p class="text-white text-2xl w-1/3 max-lg:w-full px-4 font-[Oswald] text-center">
+                        <p class="text-5xl text-white p-4">Africa's Time</p>
+                        <p class="text-white text-2xl w-1/3 max-lg:w-full px-4 text-center">
                             Traveling gives you the time to stop and slow down. It is important that we truly let ourselves relax and sometimes let go of all of our responsibilities in life.
                         </p>
                     </div>
