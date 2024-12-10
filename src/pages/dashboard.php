@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
     <script src="../assets/js/dashboard.js" defer></script>
-    <script src="../assets/js/form-handling.js" defer></script>
+    <script src="../assets/js/form-handling.js?2" defer></script>
 </head>
 <body class="font-[Oswald]">
     <?php include"../config/connection.php"; ?>
@@ -53,6 +53,16 @@
     <!-- form to add new continent -->
     <div id="continent-form" class="absolute top-0 bottom-0 w-full hidden justify-center items-center">
         <?php include"../cruds/create-continent.php"; ?>
+    </div>
+
+    <!-- form to add new country -->
+    <div id="country-form" class="absolute top-0 bottom-0 w-full hidden justify-center items-center">
+        <?php include"../cruds/create-country.php"; ?>
+    </div>
+
+    <!-- form to add new city -->
+    <div id="city-form" class="absolute top-0 bottom-0 w-full hidden justify-center items-center">
+        <?php include"../cruds/create-city.php"; ?>
     </div>
 
 </body>
