@@ -28,6 +28,10 @@
             <div class="p-6 flex justify-center items-center bg-gray-100">
                 <a href="#" class="bg-black px-6 py-2 text-white rounded-md">Explore The Africa Country and cites !</a>
             </div>
+
+            <div class="flex justify-center items-center bg-white p-6">
+                <?php include"../assets/components/africa.php"; ?>
+            </div>
         </div>
         <?php include"../assets/components/footer.php"; ?>
     </div>
