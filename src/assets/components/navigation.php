@@ -1,7 +1,7 @@
 <nav class="flex items-center justify-between px-10 max-sm:px-2 shadow-md text-gray-700 bg-gray-50 z-10">
     <ul class="h-full flex items-center">
         <li class="mr-8" href="./index.html">
-        <a class="mr-8 flex items-center gap-1 cursor-pointer" href="./index.php">
+        <a class="mr-8 flex items-center gap-1 cursor-pointer" href="./home.php">
             <img src="../assets/images/icons/elephant.svg" class="size-8" alt="">
             <span class="font-bold">Africa Géo-Junior</span>
         </a>
