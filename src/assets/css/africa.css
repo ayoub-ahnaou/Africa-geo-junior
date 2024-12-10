@@ -1,0 +1,71 @@
+#africa {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+path:hover,
+circle:hover {
+  stroke: #002868;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #002868;
+  cursor: pointer;
+}
+#path67 {
+  fill: none;
+  stroke: #a9a9a9;
+  cursor: default;
+}
+#infoBubble {
+  display: none;
+  position: fixed;
+  tom: 0;
+  right: 0;
+  background-color: #ffffff;
+  border: 2px solid #bf0a30;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: arial;
+}
+
+.my-legend .legend-title {
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 110%;
+}
+.my-legend .legend-scale ul {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  float: left;
+  list-style: none;
+}
+.my-legend .legend-scale ul li {
+  font-size: 80%;
+  list-style: none;
+  margin-left: 0;
+  line-height: 18px;
+  margin-bottom: 2px;
+}
+.my-legend ul.legend-labels li span {
+  display: block;
+  float: left;
+  height: 16px;
+  width: 30px;
+  margin-right: 5px;
+  margin-left: 0;
+  border: 1px solid #999;
+}
+.my-legend .legend-source {
+  font-size: 90%;
+  color: #999;
+  clear: both;
+  font-family: arial;
+}
+.my-legend a {
+  color: #cccccc;
+}
