@@ -6,6 +6,7 @@
     <title>Africa Géo-Junior</title>
     <link rel="stylesheet" href="../assets/css/input.css">
     <link rel="stylesheet" href="../assets/css/output.css">
+    <link rel="stylesheet" href="../assets/css/africa.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
