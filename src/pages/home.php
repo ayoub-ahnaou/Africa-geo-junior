@@ -33,7 +33,7 @@
                 <a href="#" class="bg-black px-6 py-2 text-white rounded-md">Explore The Africa Country and cites !</a>
             </div>
 
-            <div class="flex justify-center items-center bg-white p-6">
+            <div class="flex justify-center items-center bg-white p-6 overflow-hidden">
                 <?php include"../assets/components/africa.php"; ?>
             </div>
         </div>
