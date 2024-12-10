@@ -12,11 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
     <script src="../assets/js/dashboard.js" defer></script>
+    <script src="../assets/js/form-handling.js" defer></script>
 </head>
 <body class="font-[Oswald]">
     <?php include"../config/connection.php"; ?>
     
-    <div class="flex flex-col min-h-[100vh]">
+    <div id="background" class="flex flex-col min-h-[100vh]">
         <?php include"../assets/components/navigation.php"; ?>
 
         <div class="flex-grow flex">
@@ -50,7 +51,7 @@
     </div>
 
     <!-- form to add new continent -->
-    <div id="continent-form" class="absolute top-0 bottom-0 w-full justify-center items-center hidden">
+    <div id="continent-form" class="absolute top-0 bottom-0 w-full hidden justify-center items-center">
         <?php include"../cruds/create-continent.php"; ?>
     </div>
 
