@@ -5,7 +5,13 @@
 
     ?>
 
-    <h1 class="p-6 text-2xl">Cites</h1>
+    <div class="p-4 flex justify-between items-center">
+        <h1 class="text-2xl">Cities</h1>
+        <div class="flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-2 px-4 rounded-md">
+            <span>Add New City</span>
+            <img src="../assets/images/icons/add-record.svg" class="size-4" alt="">
+        </div>
+    </div>
     <div class="relative overflow-auto h-[70vh]">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 bg-red-200">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
