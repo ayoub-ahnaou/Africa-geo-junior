@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body class="font-[Oswald]">
+    <?php include"../config/connection.php"; ?>
     
     <div class="flex flex-col min-h-[100vh]">
         <?php include"../assets/components/navigation.php"; ?>
@@ -37,7 +38,10 @@
                     </li>
                 </ul>
             </section>
-            <section class="w-4/5"></section>
+
+            <?php include"../assets/components/continents.php"; ?>
+            <?php include"../assets/components/countries.php"; ?>
+            <?php include"../assets/components/cities.php"; ?>
         </div>
         
         <?php include"../assets/components/footer.php"; ?> 

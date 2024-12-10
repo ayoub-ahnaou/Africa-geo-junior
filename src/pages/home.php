@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body class="font-[Oswald]">
+    <?php include"../config/connection.php"; ?>
     
     <div class="flex flex-col min-h-[100vh]">
         <?php include"../assets/components/navigation.php"; ?>
