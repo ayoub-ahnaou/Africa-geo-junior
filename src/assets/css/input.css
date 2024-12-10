@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (max-width: 767px){
+  #menu {
+      position: absolute;
+      flex-direction: column;
+      top: -100%;
+      right: 0;
+      left: 0;
+      justify-content: flex-start;
+      background: white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      padding: 1rem;
+      gap: .5rem;
+      ul {
+          width: 100%;
+          flex-direction: column;
+          gap: 1rem;
+      }
+      div {
+          flex-direction: column;
+      }
+  }
+}
