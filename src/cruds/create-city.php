@@ -1,3 +1,8 @@
+<?php 
+    $query = "SELECT * FROM pays";
+    $result = mysqli_query($conn, $query);
+?>
+
 <form action="" class="bg-white min-h-[400px] w-1/2 max-md:h-auto max-lg:w-3/5 max-md:w-4/5 max-sm:w-full max-sm:h-[98%] max-sm:m-2 shadow-lg flex flex-col p-4 gap-2">
     <div class="flex flex-col py-4">
         <h1 class="text-xl font-medium">City Informations</h1>
@@ -10,11 +15,24 @@
         <!-- <p id="city-name-errMssg" class="text-red-600 bg-red-50 px-1 text-sm">This field is Required...</p> -->
         
         <label for="city-type" class="text-gray-600">City Type</label>
-        <select name="city-type" id="city-type">
+        <select name="city-type" id="city-type" class="bg-gray-100 p-1">
             <option value="" selected disabled>Select a Type</option>
             <option value="Capital">Capital</option>
             <option value="Important">Important</option>
             <option value="Normal">Normal</option>
+        </select>
+        <!-- <p id="city-type-errMssg" class="text-red-600 bg-red-50 px-1 text-sm">This field is Required...</p> -->
+
+        <label for="city-type" class="text-gray-600">Country of City</label>
+        <select name="city-type" id="city-type" class="bg-gray-100 p-1">
+            <option value="" selected disabled>Select a Country</option>
+            <?php
+                if(mysqli_num_rows($result) > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo "<option value='". $row["id_pays"] . "'>" . $row['nom'] . "</option>";
+                    }
+                }
+            ?>
         </select>
         <!-- <p id="city-type-errMssg" class="text-red-600 bg-red-50 px-1 text-sm">This field is Required...</p> -->
     </div>
