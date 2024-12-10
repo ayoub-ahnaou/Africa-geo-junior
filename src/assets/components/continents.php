@@ -1,4 +1,4 @@
-<section class="w-4/5">
+<section id="continents" class="w-4/5">
     <?php
         $sql = "SELECT * FROM continent";
         $result = mysqli_query($conn, $sql);

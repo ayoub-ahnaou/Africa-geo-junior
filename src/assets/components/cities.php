@@ -1,4 +1,4 @@
-<section class="w-4/5">
+<section id="cities" class="w-4/5 hidden">
     <?php
     $sql = "SELECT id_ville, ville.nom as nom, type, pays.nom as country, continent.nom as continent FROM ville, pays, continent where ville.id_pays = pays.id_pays and pays.id_continent = continent.id_continent";
     $result = mysqli_query($conn, $sql);
@@ -51,7 +51,7 @@
                         echo "<p class='text-red-600 bg-red-50 px-2'>No Continent is find</p>";
                     }
                 ?>
-    
+
             </tbody>
         </table>
     </div>
