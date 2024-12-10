@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <script src="../assets/js/dashboard.js" defer></script>
 </head>
 <body class="font-[Oswald]">
     <?php include"../config/connection.php"; ?>
@@ -24,15 +26,15 @@
                     <h1 class="text-xl">Dashboard</h1>
                 </div>
                 <ul class="flex flex-col">
-                    <li class="p-2 hover:bg-white bg-white transition-all delay-75 ease-linear cursor-pointer flex items-center gap-2">
+                    <li id="continents_choice" onclick="setChoice('continents')" class="p-2 hover:bg-white bg-white transition-all delay-75 ease-linear cursor-pointer flex items-center gap-2">
                         <img src="../assets/images/icons/continent.svg" class="size-5" alt="">
                         <p>Continents</p>
                     </li>
-                    <li class="p-2 hover:bg-white transition-all delay-75 ease-linear cursor-pointer flex items-center gap-2">
+                    <li id="countries_choice" onclick="setChoice('countries')" class="p-2 hover:bg-white transition-all delay-75 ease-linear cursor-pointer flex items-center gap-2">
                         <img src="../assets/images/icons/countries.svg" class="size-5" alt="">
                         <p>Country</p>
                     </li>
-                    <li class="p-2 hover:bg-white transition-all delay-75 ease-linear cursor-pointer flex items-center gap-2">
+                    <li id="cities_choice" onclick="setChoice('cities')" class="p-2 hover:bg-white transition-all delay-75 ease-linear cursor-pointer flex items-center gap-2">
                         <img src="../assets/images/icons/cities.svg" class="size-5" alt="">
                         <p>Cities</p>
                     </li>
