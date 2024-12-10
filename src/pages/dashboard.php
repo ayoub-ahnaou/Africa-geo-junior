@@ -49,5 +49,10 @@
         <?php include"../assets/components/footer.php"; ?> 
     </div>
 
+    <!-- form to add new continent -->
+    <div id="continent-form" class="absolute top-0 bottom-0 w-full justify-center items-center hidden">
+        <?php include"../cruds/create-continent.php"; ?>
+    </div>
+
 </body>
 </html>
