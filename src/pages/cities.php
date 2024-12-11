@@ -16,9 +16,28 @@
         <?php 
             include "../config/connection.php";
             include "../assets/components/navigation.php";
+            $country = $_GET["country"];
+            $sql = "SELECT * FROM pays WHERE nom LIKE '$country'";
+            $country_result = mysqli_query($conn, $sql);
         ?>
     
         <div class="flex-grow py-4 px-10 max-sm:px-2">
+            <?php 
+                if(mysqli_num_rows($country_result) > 0){
+                    $row = mysqli_fetch_assoc($country_result);
+                    echo "
+                        <div class='flex gap-1 max-sm:flex-col' style='margin-bottom: 20px;'>
+                            <img src='https://www.andbeyond.com/wp-content/uploads/sites/5/ngala-private-game-reserve-fandam-elephant-herd3.jpg' alt='' class='h-[120px] max-sm:object-cover'>
+                            <div class='flex flex-col'>
+                                <p class='text-gray-900 font-bold text-xl'>". $row["nom"] ."</p>
+                                <p class='text-xs text-gray-500'>Langues: ".$row["langues"]."</p>
+                                <p class='text-xs text-gray-500'>".$row["population"]." People</p>
+                                <p class='text-sm text-gray-700 w-1/2 max-lg:w-full'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit possimus perferendis, repellat, voluptatum itaque blanditiis expedita deserunt laborum sint maiores voluptatem non, recusandae dolorem minima!</p>
+                            </div>
+                        </div>
+                    ";
+                }
+            ?>
             <section class="flex flex-col gap-4">
                 <div class="flex justify-between items-center relative">
                     <h1 class="text-2xl font-bold">Cities</h1>
@@ -32,8 +51,7 @@
                 </div>
                 
                 <div class="flex gap-4 flex-wrap justify-start flex-grow max-h-[76vh] overflow-auto [&::-webkit-scrollbar]:hidden">
-                    <?php 
-                        $country = $_GET["country"];
+                    <?php
 
                         if($country != ""){
                             $sql = "SELECT *, pays.nom as country, ville.nom as city FROM ville, pays WHERE pays.nom LIKE '$country' AND pays.id_pays = ville.id_pays";
