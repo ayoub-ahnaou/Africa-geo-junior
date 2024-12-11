@@ -31,11 +31,11 @@
                     <?php 
                         if(mysqli_num_rows($result) > 0){
                             while ($row = mysqli_fetch_assoc($result)) {
-                                echo "<div class='w-[24%] max-xl:w-[32%] max-lg:w-[32%] max-[868px]:w-[48.5%] max-md:w-[100%]'>
+                                echo "<div class='w-[24.2%] max-xl:w-[31.6%] max-lg:w-[32%] max-[868px]:w-[48.5%] max-md:w-[100%]'>
                                     <img src='https://www.andbeyond.com/wp-content/uploads/sites/5/ngala-private-game-reserve-fandam-elephant-herd3.jpg'>
                                     <div class='flex items-center justify-between'>
-                                        <p class='text-lg font-bold'>". $row["continent"] .", ". $row["nom"] ."</p>
-                                        <p class='text-gray-400 text-sm'>". $row["population"] ." peoples</p>
+                                        <p class='text-lg font-bold'>". $row["nom"] .", ". $row["continent"] ."</p>
+                                        <p class='text-gray-400 text-sm'>". $row["population"] ." people</p>
                                     </div>
                                     <p class='text-gray-500 text-xs'>Langues: ". $row["langues"] ."</p>
                                     <p class='text-gray-700 text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam corrupti error deserunt. Quis modi sapiente voluptatum adipisci omnis rem culpa veniam, itaque nulla officia nisi?</p>
