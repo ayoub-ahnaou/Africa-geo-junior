@@ -10,7 +10,7 @@
     <div class="flex items-center flex-1 justify-between text-sm max-md:hidden">
         <ul class="flex items-center">
             <li><a class="hover:bg-gray-100 hover:border-b-gray-700 border-transparent border p-2 px-4 cursor-pointer transition-all delay-75 ease-linear" href="./dashboard.php">Dashboard Admin</a></li>
-            <li><a class="hover:bg-gray-100 hover:border-b-gray-700 border-transparent border p-2 px-4 cursor-pointer transition-all delay-75 ease-linear" href="#">Explore Africa</a></li>
+            <li><a class="hover:bg-gray-100 hover:border-b-gray-700 border-transparent border p-2 px-4 cursor-pointer transition-all delay-75 ease-linear" href="./explore.php">Explore Africa</a></li>
         </ul>
         <div class="flex items-center h-full gap-4">
             <div class="flex items-end hover:bg-gray-100 hover:border-b-gray-700 border-transparent border p-2 px-4 cursor-pointer transition-all delay-75 ease-linear">
