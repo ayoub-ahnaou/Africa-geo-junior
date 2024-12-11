@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <script src="../assets/js/filter-handling.js" defer></script>
 </head>
 <body class="font-[Oswald]">
     <div id="background" class="flex flex-col min-h-[100vh]">
@@ -23,9 +24,16 @@
     
         <div class="flex-grow py-4 px-10 max-md:px-2">
             <section class="flex flex-col gap-4">
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center relative">
                     <h1 class="text-2xl font-bold">Countries</h1>
-                    <img src="../assets/images/icons/filter.svg" class="size-5" alt="">
+                    <img src="../assets/images/icons/filter.svg" class="size-5 cursor-pointer" id="filter-continent-icon" alt="">
+                    <div class="absolute right-0 top-[100%] bg-white shadow-xl hidden flex-col" id="filter-continent-items">
+                        <p class="hover:bg-gray-100 pr-24 pl-2">All</p>
+                        <p class="hover:bg-gray-100 pr-24 pl-2">Africa</p>
+                        <p class="hover:bg-gray-100 pr-24 pl-2">Europe</p>
+                        <p class="hover:bg-gray-100 pr-24 pl-2">Asia</p>
+                        <p class="hover:bg-gray-100 pr-24 pl-2">America</p>
+                    </div>
                 </div>
                 <div class="flex gap-4 flex-wrap justify-start flex-grow max-h-[76vh] overflow-auto [&::-webkit-scrollbar]:hidden">
                     <?php 
