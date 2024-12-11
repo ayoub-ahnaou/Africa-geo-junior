@@ -22,7 +22,7 @@
             $result = mysqli_query($conn, $sql);
         ?>
     
-        <div class="flex-grow py-4 px-10 max-md:px-2">
+        <div class="flex-grow py-4 px-10 max-sm:px-2">
             <section class="flex flex-col gap-4">
                 <div class="flex justify-between items-center relative">
                     <h1 class="text-2xl font-bold">Countries</h1>
