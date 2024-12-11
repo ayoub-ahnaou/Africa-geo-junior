@@ -40,7 +40,7 @@
                         if(mysqli_num_rows($result) > 0){
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo "<div class='w-[24.2%] max-xl:w-[31.6%] max-lg:w-[32%] max-[868px]:w-[48.5%] max-md:w-[100%]'>
-                                    <a href=" . "'./countries.php?country=". $row["nom"] . "'>
+                                    <a href=" . "'./cities.php?country=". $row["nom"] . "'>
                                         <img src='https://www.andbeyond.com/wp-content/uploads/sites/5/ngala-private-game-reserve-fandam-elephant-herd3.jpg'>
                                     </a>
                                     <div class='flex items-center justify-between'>
