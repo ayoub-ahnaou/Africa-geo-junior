@@ -16,6 +16,9 @@
         <?php 
             include "../config/connection.php";
             include "../assets/components/navigation.php";
+
+            $sql = "SELECT id_pays, pays.nom as nom, population, langues, continent.nom as continent FROM pays, continent where pays.id_continent = continent.id_continent ORDER by id_pays ASC";
+            $result = mysqli_query($conn, $sql);
         ?>
     
         <div class="flex-grow py-4 px-10 max-md:px-2">
@@ -26,16 +29,21 @@
                 </div>
                 <div class="flex gap-4 flex-wrap justify-start flex-grow max-h-[76vh] overflow-auto [&::-webkit-scrollbar]:hidden">
                     <?php 
-                        for($i = 0; $i < 7; $i++){
-                            echo "<div class='w-[24%] max-xl:w-[32%] max-lg:w-[32%] max-[868px]:w-[48.5%] max-md:w-[100%]'>
-                                <img src='https://www.andbeyond.com/wp-content/uploads/sites/5/ngala-private-game-reserve-fandam-elephant-herd3.jpg'>
-                                <div class='flex items-center justify-between'>
-                                    <p class='text-xl font-bold'>Morocco</p>
-                                    <p class='text-gray-400 text-sm'>35.000.000 peoples</p>
-                                </div>
-                                <p class='text-gray-600 text-xs'>Langues: Arabic, French</p>
-                                <p class='text-gray-600 text-xs'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam corrupti error deserunt. Quis modi sapiente voluptatum adipisci omnis rem culpa veniam, itaque nulla officia nisi?</p>
-                            </div>";
+                        if(mysqli_num_rows($result) > 0){
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<div class='w-[24%] max-xl:w-[32%] max-lg:w-[32%] max-[868px]:w-[48.5%] max-md:w-[100%]'>
+                                    <img src='https://www.andbeyond.com/wp-content/uploads/sites/5/ngala-private-game-reserve-fandam-elephant-herd3.jpg'>
+                                    <div class='flex items-center justify-between'>
+                                        <p class='text-lg font-bold'>". $row["continent"] .", ". $row["nom"] ."</p>
+                                        <p class='text-gray-400 text-sm'>". $row["population"] ." peoples</p>
+                                    </div>
+                                    <p class='text-gray-500 text-xs'>Langues: ". $row["langues"] ."</p>
+                                    <p class='text-gray-700 text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam corrupti error deserunt. Quis modi sapiente voluptatum adipisci omnis rem culpa veniam, itaque nulla officia nisi?</p>
+                                </div>";
+                            }
+                        }
+                        else {
+                            echo "<p class='bg-red-50 w-full text-red-600'>No Countries available right now...</p>";
                         }
                     ?>
                 </div>
