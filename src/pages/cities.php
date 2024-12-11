@@ -32,6 +32,32 @@
                 </div>
                 
                 <div class="flex gap-4 flex-wrap justify-start flex-grow max-h-[76vh] overflow-auto [&::-webkit-scrollbar]:hidden">
+                    <?php 
+                        $country = $_GET["country"];
+
+                        if($country != ""){
+                            $sql = "SELECT *, pays.nom as country, ville.nom as city FROM ville, pays WHERE pays.nom LIKE '$country' AND pays.id_pays = ville.id_pays";
+                            $result = mysqli_query($conn, $sql);
+
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+
+                                    echo "<div class='w-[24.2%] max-xl:w-[31.6%] max-lg:w-[32%] max-[868px]:w-[48.5%] max-md:w-[100%]'>
+                                        <img src='https://cdn.cfr.org/sites/default/files/styles/open_graph_article/public/image/2019/08/Nigeria-Lagos-Victoria-Island-Urbanization.jpg'>
+                                        <div class='flex items-center justify-between'>
+                                            <p class='text-lg font-bold'>". $row["city"] ."</p>
+                                            <p class='text-gray-400 text-sm'>". $row["type"] ."</p>
+                                        </div>
+                                        <p class='text-gray-700 text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam corrupti error deserunt. Quis modi sapiente voluptatum adipisci omnis rem culpa veniam, itaque nulla officia nisi?</p>
+                                    </div>";
+                                }
+                            }
+                            else echo "<p class='bg-red-50 text-red-600 w-full p-2'>'". $country ."' Country Not Found in the Database, Please verify and Try Again !</p>";
+                        }
+                        else {
+                            echo "<p class='bg-red-50 text-red-600 w-full p-2'>Sorry, Something Went Wrong !</p>";
+                        }
+                    ?>
                 </div>
             </section>
         </div>
