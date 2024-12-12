@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin Page</title>
+    <title>Dashboard Admin Page - Create City</title>
     <link rel="stylesheet" href="../../assets/css/input.css">
     <link rel="stylesheet" href="../../assets/css/output.css">
     <script src="https://cdn.tailwindcss.com"></script>
