@@ -35,16 +35,54 @@
         $country_langues_err = "";
         $country_continent_err = "";
 
+        $query_err = "";
+
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $country_name = $_POST["country-name"];
             $country_population = $_POST["country-population"];
             $country_langues = $_POST["country-langues"];
-            $country_continent = isset($_POST["country-content"]) || "";
+            $country_continent = isset($_POST["country-continent"]) || "";
 
             if(empty($country_name)) $country_name_err = "This field is Required...";
             if(empty($country_population)) $country_population_err = "This field is Required...";
             if(empty($country_langues)) $country_langues_err = "This field is Required...";
             if(empty($country_continent)) $country_continent_err = "This field is Required...";
+
+            if(!empty($country_name) && !empty($country_population) && !empty($country_langues) && !empty($country_continent)){
+                $all_countries_query = "SELECT * FROM pays";
+                $all_countries_result = mysqli_query($conn, $all_countries_query);
+
+                $isExist = false;
+                if(mysqli_num_rows($all_countries_result) > 0){
+                    while($row = mysqli_fetch_assoc($all_countries_result)){
+                        if($row["nom"] == $country_name){
+                            $country_name = "Country name already exist, Could you choose another one.";
+                            $isExist = true;
+                        }
+                    }
+                }
+                if(!$isExist){
+                    $insertion_query = "INSERT INTO pays (nom, population, langues, id_continent) VALUES ('$country_name', $country_population, '$country_langues', $country_continent)";
+                    $insertion_result = mysqli_query($conn, $insertion_query);
+                    if(!$insertion_result){
+                        $query_err = "Something Went Wrong When Insertion. Please try again";
+                    }
+                    else{
+                        $country_name = "";
+                        $country_population = "";
+                        $country_langues = "";
+                        $country_continent = "";
+
+                        $country_name_err = "";
+                        $country_population_err = "";
+                        $country_langues_err = "";
+                        $country_continent_err = "";
+
+                        $query_err = "";
+                        header("location: /Africa-geo-junior/src/pages/dashboard.php");
+                    }
+                }
+            }
         }
     ?>
     <div class="flex flex-col justify-center items-center flex-grow">
@@ -53,6 +91,9 @@
         <div class="flex flex-col py-4">
             <h1 class="text-xl font-medium">Country Informations</h1>
             <p class="text-gray-400 text-sm">Fill the inputs with a Valid data to create a new record in your Database</p>
+            <p class="bg-red-50 text-red-600">
+                <?php if(!empty($query_err)) echo $query_err; ?>
+            </p>
         </div>
 
         <div class="flex-grow flex flex-col text-sm gap-1 mb-4">
