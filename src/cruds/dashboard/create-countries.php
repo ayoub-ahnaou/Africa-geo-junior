@@ -39,7 +39,7 @@
             $country_name = $_POST["country-name"];
             $country_population = $_POST["country-population"];
             $country_langues = $_POST["country-langues"];
-            $country_continent = $_POST["country-content"];
+            $country_continent = isset($_POST["country-content"]) || "";
 
             if(empty($country_name)) $country_name_err = "This field is Required...";
             if(empty($country_population)) $country_population_err = "This field is Required...";
