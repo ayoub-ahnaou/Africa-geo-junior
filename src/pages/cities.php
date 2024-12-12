@@ -26,7 +26,7 @@
                 if(mysqli_num_rows($country_result) > 0){
                     $row = mysqli_fetch_assoc($country_result);
                     echo "
-                        <div class='flex gap-1 max-sm:flex-col' style='margin-bottom: 20px;'>
+                        <div class='flex gap-1 max-sm:flex-col bg-gray-100' style='margin-bottom: 20px;'>
                             <img src='https://www.andbeyond.com/wp-content/uploads/sites/5/ngala-private-game-reserve-fandam-elephant-herd3.jpg' alt='' class='h-[120px] max-sm:object-cover'>
                             <div class='flex flex-col'>
                                 <p class='text-gray-900 font-bold text-xl'>". $row["nom"] ."</p>
