@@ -6,10 +6,12 @@
 
     <div class="p-4 flex justify-between items-center">
         <h1 class="text-2xl">Continents</h1>
-        <div id="add-continent-button" class="flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-2 px-4 rounded-md">
+        <!-- <div id="add-continent-button" class="flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-2 px-4 rounded-md"> -->
+        <a href="../../src/cruds/dashboard/create-continents.php" class="flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-2 px-4 rounded-md">
             <span>Add New Continent</span>
             <img src="../assets/images/icons/add-record.svg" class="size-4" alt="">
-        </div>
+        </a>
+        <!-- </div> -->
     </div>
     <div class="relative overflow-auto h-[70vh]">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
