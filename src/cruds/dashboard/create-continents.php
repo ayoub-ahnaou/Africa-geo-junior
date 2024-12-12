@@ -22,11 +22,40 @@
     </div>
 
     <?php 
+        $sql = "SELECT * FROM continent";
+        $result = mysqli_query($conn, $sql);
+
         $continent_name = "";
         $continent_name_err = "";
+        $query_err = "";
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $continent_name = $_POST["continent-name"];
             if(empty($continent_name)) $continent_name_err = "This field is Required...";
+            else{
+                $isExist = false;
+                if(mysqli_num_rows($result) > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+                        if($row["nom"] == $continent_name){
+                            $continent_name_err = "Continent name already Exist, Could you choose another one !";
+                            $isExist = true;
+                        }
+                    }
+                }
+                if(!$isExist){
+                    $insertion_query = "INSERT INTO continent VALUES ( ". mysqli_num_rows($result) + 1 .", '". $continent_name ."')";
+                    $insertion_result = $conn -> query($insertion_query);
+
+                    if(!$insertion_result){
+                        $query_err = "Something Went Wrong When Insertion";
+                    }
+                    else {
+                        $continent_name = "";
+                        $continent_name_err = "";
+                        $query_err = "";
+                        header("location: /Africa-geo-junior/src/pages/dashboard.php");
+                    }
+                }
+            }
         }
     ?>
     <div class="flex flex-col justify-center items-center flex-grow">
@@ -35,6 +64,9 @@
             <div class="flex flex-col py-4">
                 <h1 class="text-xl font-medium">Continent Informations</h1>
                 <p class="text-gray-400 text-sm">Fill the inputs with a Valid data to create a new record in your Database</p>
+                <p class="bg-red-50 text-red-600">
+                    <?php if(!empty($query_err)) echo $query_err; ?>
+                </p>
             </div>
 
             <div class="flex-grow flex flex-col text-sm gap-1 mb-4">
