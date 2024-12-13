@@ -40,6 +40,36 @@
         else{
             $query_err = "ID '$id_continent' Not Found in Continent Table, Try Again";
         }
+        
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            $continent_name = $_POST["continent-name"];
+            if(empty($continent_name)) $continent_name_err = "This field is Required...";
+            else{
+                $isExist = false;
+                if(mysqli_num_rows($result) > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+                        if($row["nom"] == $continent_name){
+                            $continent_name_err = "Continent name already Exist, Could you choose another one !";
+                            $isExist = true;
+                        }
+                    }
+                }
+                if(!$isExist){
+                    $update_query = "UPDATE continent SET nom = '$continent_name' WHERE id_continent = $id_continent";
+                    $update_result = mysqli_query($conn, $update_query);
+
+                    if(!$update_result){
+                        $query_err = "Something Went Wrong When Updating";
+                    }
+                    else {
+                        $continent_name = "";
+                        $continent_name_err = "";
+                        $query_err = "";
+                        header("location: /Africa-geo-junior/src/pages/dashboard.php");
+                    }
+                }
+            }
+        }
     ?>
     <div class="flex flex-col justify-center items-center flex-grow">
 
