@@ -51,6 +51,40 @@
         else{
             $query_err = "ID '$id_pays' Not Found in Country Table, Try Again";
         }
+
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            $country_name = $_POST["country-name"];
+            $country_population = $_POST["country-population"];
+            $country_langues = $_POST["country-langues"];
+            $country_continent = $_POST["country-continent"];
+
+            if(empty($country_name)) $country_name_err = "This field is Required...";
+            if(empty($country_population)) $country_population_err = "This field is Required...";
+            if(empty($country_langues)) $country_langues_err = "This field is Required...";
+            if(empty($country_continent)) $country_continent_err = "This field is Required...";
+
+            if(!empty($country_name) && !empty($country_population) && !empty($country_langues) && !empty($country_continent)){
+                $iupdate_query = "UPDATE pays SET nom = '$country_name', population = $country_population, langues = '$country_langues', id_continent = $country_continent WHERE id_pays = $id_pays";
+                $iupdate_result = mysqli_query($conn, $iupdate_query);
+                if(!$iupdate_result){
+                    $query_err = "Something Went Wrong When Updating. Please try again";
+                }
+                else{
+                    $country_name = "";
+                    $country_population = "";
+                    $country_langues = "";
+                    $country_continent = "";
+
+                    $country_name_err = "";
+                    $country_population_err = "";
+                    $country_langues_err = "";
+                    $country_continent_err = "";
+
+                    $query_err = "";
+                    header("location: /Africa-geo-junior/src/pages/dashboard.php");
+                }
+            }
+        }
     ?>
     <div class="flex flex-col justify-center items-center flex-grow">
 
