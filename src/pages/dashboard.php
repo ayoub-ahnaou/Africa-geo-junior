@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
     <script src="../assets/js/dashboard.js" defer></script>
-    <script src="../assets/js/form-handling.js?2" defer></script>
 </head>
 <body class="font-[Oswald]">
     <?php include"../config/connection.php"; ?>
