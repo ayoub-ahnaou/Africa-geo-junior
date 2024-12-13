@@ -47,6 +47,36 @@
     } else {
         $query_err = "ID '$id_city' Not Found in Cities Table, Try Again";
     }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $city_name = $_POST["city-name"];
+        $city_type = $_POST["city-type"];
+        $city_country = $_POST["city-country"];
+
+        if (empty($city_name)) $city_name_err = "This field is Required...";
+        if (empty($city_type)) $city_type_err = "This field is Required...";
+        if (empty($city_country)) $city_country_err = "This field is Required...";
+
+        if (!empty($city_name) && !empty($city_type) && !empty($city_country)) {
+
+            $update_query = "UPDATE ville SET nom = '$city_name', type = '$city_type', id_pays = $city_country WHERE id_ville = $id_city";
+            $update_result = mysqli_query($conn, $update_query);
+            if (!$update_result) {
+                $query_err = "Something Went Wrong When Updating. Please try again";
+            } else {
+                $city_name = "";
+                $city_type = "";
+                $city_country = "";
+
+                $city_name_err = "";
+                $city_type_err = "";
+                $city_country_err = "";
+
+                $query_err = "";
+                header("location: /Africa-geo-junior/src/pages/dashboard.php");
+            }
+        }
+    }
     ?>
 
     <div class="flex flex-col justify-center items-center flex-grow">
