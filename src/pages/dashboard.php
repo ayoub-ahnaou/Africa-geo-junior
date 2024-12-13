@@ -19,8 +19,8 @@
     <div id="background" class="flex flex-col min-h-[100vh]">
         <?php include"../assets/components/navigation.php"; ?>
 
-        <div class="flex-grow flex">
-            <section class="w-1/5 bg-gray-100 flex flex-col">
+        <div class="flex-grow flex max-md:flex-col">
+            <section class="w-1/5 bg-gray-100 flex flex-col max-md:w-full">
                 <div class="flex py-6 px-2 items-center gap-1">
                     <img src="../assets/images/icons/dashboard.svg" class="size-6" alt="">
                     <h1 class="text-xl">Dashboard</h1>

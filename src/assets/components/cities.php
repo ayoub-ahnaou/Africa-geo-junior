@@ -1,4 +1,4 @@
-<section id="cities" class="w-4/5 hidden">
+<section id="cities" class="w-4/5 max-md:w-full hidden">
     <?php
     $sql = "SELECT id_ville, ville.nom as nom, type, pays.nom as country, continent.nom as continent FROM ville, pays, continent where ville.id_pays = pays.id_pays and pays.id_continent = continent.id_continent";
     $result = mysqli_query($conn, $sql);

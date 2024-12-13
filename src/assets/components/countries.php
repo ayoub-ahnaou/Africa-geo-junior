@@ -1,4 +1,4 @@
-<section id="countries" class="w-4/5 hidden">
+<section id="countries" class="w-4/5 max-md:w-full hidden">
     <?php
         $sql = "SELECT id_pays, pays.nom as nom, population, langues, continent.nom as continent FROM pays, continent where pays.id_continent = continent.id_continent ORDER by id_pays ASC";
         $result = mysqli_query($conn, $sql);
