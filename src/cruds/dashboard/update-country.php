@@ -20,7 +20,38 @@
         <img src="../../assets/images/icons/arrow-left.svg" class="size-5" alt="">
         <a href="../../pages/dashboard.php" class="hover:underline">Back to Admin Dashboard</a>
     </div>
-    
+
+    <?php
+        $query = "SELECT * FROM continent";
+        $result = mysqli_query($conn, $query);
+
+        $id_pays = $_GET["id"];
+        $country_name = "";
+        $country_population = "";
+        $country_langues = "";
+        $country_continent = "";
+
+        $country_name_err = "";
+        $country_population_err = "";
+        $country_langues_err = "";
+        $country_continent_err = "";
+
+        $query_err = "";
+
+        $select_country_query = "SELECT * FROM pays WHERE id_pays = $id_pays";
+        $select_country_result = mysqli_query($conn, $select_country_query);
+
+        if(mysqli_num_rows($select_country_result) > 0){
+            $row = mysqli_fetch_assoc($select_country_result);
+            $country_name = $row["nom"];
+            $country_population = $row["population"];
+            $country_langues = $row["langues"];
+            $country_continent = $row["id_continent"];
+        }
+        else{
+            $query_err = "ID '$id_pays' Not Found in Country Table, Try Again";
+        }
+    ?>
     <div class="flex flex-col justify-center items-center flex-grow">
 
     <form method="POST" class="bg-white min-h-[400px] w-1/2 max-md:h-auto max-lg:w-3/5 max-md:w-4/5 max-sm:w-full max-sm:h-[98%] max-sm:m-2 shadow-lg flex flex-col p-4 gap-2">
