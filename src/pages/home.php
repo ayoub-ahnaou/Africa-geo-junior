@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Africa Géo-Junior</title>
-    <link rel="stylesheet" href="../assets/css/input.css">
-    <link rel="stylesheet" href="../assets/css/output.css">
-    <link rel="stylesheet" href="../assets/css/africa.css">
+    <link rel="stylesheet" href="../assets/css/input.css?version=1">
+    <link rel="stylesheet" href="../assets/css/output.css?v=1">
+    <link rel="stylesheet" href="../assets/css/africa.css?v=1">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/africa.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
