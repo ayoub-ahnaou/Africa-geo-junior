@@ -22,11 +22,24 @@
     </div>
 
     <?php 
+        $sql = "SELECT * FROM continent";
+        $result = mysqli_query($conn, $sql);
 
         $id_continent = $_GET["id"];
         $continent_name_err = "";
         $query_err = "";
         $continent_name = "";
+
+        $select_continent_query = "SELECT * FROM continent WHERE id_continent = $id_continent";
+        $select_continent_result = mysqli_query($conn, $select_continent_query);
+
+        if(mysqli_num_rows($select_continent_result) > 0){
+            $row = mysqli_fetch_assoc($select_continent_result);
+            $continent_name = $row["nom"];
+        }
+        else{
+            $query_err = "ID '$id_continent' Not Found in Continent Table, Try Again";
+        }
     ?>
     <div class="flex flex-col justify-center items-center flex-grow">
 
