@@ -40,7 +40,7 @@
                             echo $row["nom"];
                             echo "</td>";
                             echo "<td class='px-6 py-2 flex gap-2'>
-                                    <a href='#' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
+                                    <a href='../../src/cruds/dashboard/update-continent.php?id=$row[id_continent]' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
                                     <a href='../../src/cruds/delete-continent.php?id=$row[id_continent]' class='font-medium text-red-600 dark:text-red-500 hover:underline'>Delete</a>
                                 </td>";
                             echo "</tr>";
