@@ -19,6 +19,35 @@
     <div class="bg-gray-50 p-4 w-full flex items-center gap-2">
         <img src="../../assets/images/icons/arrow-left.svg" class="size-5" alt="">
         <a href="../../pages/dashboard.php" class="hover:underline">Back to Admin Dashboard</a>
+    </div>
+
+    <?php
+    $query = "SELECT * FROM pays";
+    $result = mysqli_query($conn, $query);
+
+    $id_city = $_GET["id"];
+    $city_name = "";
+    $city_type = "";
+    $city_country = "";
+
+    $city_name_err = "";
+    $city_type_err = "";
+    $city_country_err = "";
+
+    $query_err = "";
+
+    $select_city_query = "SELECT * FROM ville WHERE id_ville = $id_city";
+    $select_city_result = mysqli_query($conn, $select_city_query);
+
+    if (mysqli_num_rows($select_city_result) > 0) {
+        $row = mysqli_fetch_assoc($select_city_result);
+        $city_name = $row["nom"];
+        $city_type = $row["type"];
+        $city_country = $row["id_pays"];
+    } else {
+        $query_err = "ID '$id_city' Not Found in Cities Table, Try Again";
+    }
+    ?>
 
     <div class="flex flex-col justify-center items-center flex-grow">
 
